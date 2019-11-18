@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Schelling's Model</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5/lib/p5.min.js" defer></script>
+    <script type="module">
+      import sketch from "./index.js";
+      let model = new p5(sketch);
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="vh-100 d-flex flex-column">
+      <nav class="navbar navbar-expand navbar-light bg-light">
+        <div class="navbar-brand">Schelling's Model</div>
+        <ul class="navbar-nav d-flex flex-row justify-content-between">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="https://github.com/spencrr/schelling-model"
+            >
+              Code</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="https://www.stat.berkeley.edu/~aldous/157/Papers/Schelling_Seg_Models.pdf"
+              >Reference</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <div class="flex-fill w-75 m-auto d-flex flex-column">
+        <div id="canvas" class="flex-grow-1 overflow-hidden "></div>
+        <div class="p-2" id="sliders">
+          <div
+            class="d-flex flex-lg-row flex-column justify-content-between flex-wrap no-gutters"
+          >
+            <h5 class="font-weight-light">
+              Population Density
+            </h5>
+            <p class="px-lg-4 text-muted my-0">Number of Distributed Pixels</p>
+            <div class="d-lg-block d-none flex-lg-grow-1"></div>
+            <div class="col-lg-3 col-12 d-flex">
+              <div class="px-2 text-muted">
+                <span id="pop-number" class="d-inline-block"></span>
+              </div>
+              <div id="pop-slider" class="flex-grow-1"></div>
+            </div>
+          </div>
+          <div
+            class="d-flex flex-lg-row flex-column justify-content-between flex-wrap no-gutters"
+          >
+            <h5 class="font-weight-light">
+              Grid Sizing
+            </h5>
+            <p class="px-lg-4 text-muted my-0">Size of the Pixels</p>
+            <div class="d-lg-block d-none flex-lg-grow-1"></div>
+            <div class="col-lg-3 col-12 d-flex">
+              <div class="px-2 text-muted">
+                <span id="mult-number" class="d-inline-block"></span>
+              </div>
+              <div id="mult-slider" class="flex-grow-1"></div>
+            </div>
+          </div>
+          <div
+            class="d-flex flex-lg-row flex-column justify-content-between flex-wrap no-gutters"
+          >
+            <h5 class="font-weight-light">
+              Number of Groups
+            </h5>
+            <p class="px-lg-4 text-muted my-0">Number of Distinct Colors</p>
+            <div class="d-lg-block d-none flex-lg-grow-1"></div>
+            <div class="col-lg-3 col-12 d-flex">
+              <div class="px-2 text-muted">
+                <span id="group-number" class="d-inline-block"></span>
+              </div>
+              <div id="group-slider" class="flex-grow-1"></div>
+            </div>
+          </div>
+          <div
+            class="d-flex flex-lg-row flex-column justify-content-between flex-wrap no-gutters"
+          >
+            <h5 class="font-weight-light">
+              Similarity Preference
+            </h5>
+            <p class="px-lg-4 text-muted my-0">
+              Minimum Threshold for Similar Neighbor Frequency
+            </p>
+            <div class="d-lg-block d-none flex-lg-grow-1"></div>
+            <div class="col-lg-3 col-12 d-flex">
+              <div class="px-2 text-muted">
+                <span id="pref-number" class="d-inline-block"></span>
+              </div>
+              <div id="pref-slider" class="flex-grow-1"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="py-2">
+        <div class="container text-center">
+          Made with &hearts; by
+          <a class="text-reset" href="https://github.com/spencrr"
+            >Spencer Schoenberg</a
+          >
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
